@@ -3,7 +3,8 @@ import Home from './Components/Home'
 import Service from './Components/Service'
 import Testimonal from './Components/Testimonal';
 import Team from './Components/Team';
-import Contact from './Components/Contact'
+import Contact from './Components/Contact';
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; 
 
 const AppLayout = () => {    
@@ -46,7 +47,8 @@ const appRouter = createBrowserRouter([
       {
         path: "contact",
         element:<Contact />
-      }
+      },
+      
       
     ]
   }
