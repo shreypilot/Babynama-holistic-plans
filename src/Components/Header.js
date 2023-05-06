@@ -4,6 +4,7 @@ import {BiSun } from 'react-icons/bi';
 import {RiMoonLine } from 'react-icons/ri';
 import { toggleTheme } from '../utils/themeSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,9 +20,11 @@ function Header() {
     
   return (
     <div className="fixed top-0 left-0 right-0">
-      <header className={`bg-gray-100 py-4 w-auto  ${theme === 'light' ? 'bg-gray-800' : 'bg-gray-200'}`}>
+      <header className={`bg-gray-100 py-4 w-auto shadow-md  ${theme === 'light' ? 'bg-gray-800' : 'bg-gray-100'}`}>
         <div className="container mx-auto  flex justify-between">
-          <img src="https://babynama.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-new.13630e49.webp&w=1920&q=75" alt="babynama" className='md:w-52 lg:w-auto  sm:w-36' />
+          <Link to='/'>
+            <img src="https://babynama.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-new.13630e49.webp&w=1920&q=75" alt="babynama" className='md:w-52 lg:w-auto  sm:w-36' />
+          </Link>
           <nav className='md:flex'>
               <button
                 className="md:hidden "
@@ -52,24 +55,24 @@ function Header() {
               </button>
               <ul className={`flex space-x-4 gap-x-5 items-center  font-medium text-lg cursor-pointer ${isMenuOpen ? 'block' : 'hidden'} `}>
                 <li>
-                <a href="/" className = {`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
+                <Link to="/service" className = {`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Our Services
-                </a>
+                </Link>
                 </li>
                 <li>
-                <a href="/" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
+                <Link to="/testimonal" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Parent Testimonials
-                </a>
+                </Link>
                 </li>
                 <li>
-                <a href="/" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
+                <Link to ="/team" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Our Team
-                </a>
+                </Link>
                 </li>
                 <li>
-                <a href="/" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
+                <Link to="/contact" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Contact Us
-                </a>
+                </Link>
                 </li>
               </ul>
               <button onClick={handleToggleTheme} className={`ml-6  ${theme === 'light' ? 'bg-gray-800 border border-gray-500 w-12 h-12 border-4 rounded-xl px-3' : ' bg-white border border-gray-400 w-12 h-12 border-4 rounded-xl px-3'} `}>

@@ -14,10 +14,10 @@ const Home = () => {
                   <p className='mb-8 font-medium text-gray-600 sm:text-xl md:text-2xl'>Dedicated pediatrician for your baby, personal care plan, Best possible baby care</p>
                    <div className='flex max-w-none gap-4 pt-20'>
                     <button className='flex w-full sm:w-auto'>
-                        <a className='w-full text-base font-medium sm:text-lg md:text-xl bg-blue-600 py-4 px-6 rounded-md text-white '>Get Started</a>
+                        <a className='w-full text-base font-medium sm:text-lg md:text-xl bg-blue-600 hover:bg-green-950 py-4 px-6 rounded-md text-white '>Get Started</a>
                     </button>
                     <button className='flex w-full sm:w-auto'>
-                        <a className='w-full text-base border-yellow-500 bg-yellow-600 text-white py-4 px-12 rounded-md font-medium sm:text-lg md:text-xl'>Preview Access</a>
+                        <a className='w-full text-base border-yellow-500 bg-yellow-600 text-white py-4 hover:bg-yellow-950 px-12 rounded-md font-medium sm:text-lg md:text-xl'>Preview Access</a>
                     </button>
                    </div>
                 </div>
