@@ -15,10 +15,10 @@ function ContactForm() {
         setInputValue('');
     }
   return (
-    <div className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'} flex flex-col h-screen md:flex-row items-center justify-center mt-10  mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8`}>
+    <div className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'} flex flex-col h-screen md:flex-row items-center justify-center mt-10  mx-auto  py-24 px-4 sm:px-6  lg:px-8`}>
     <div className="md:w-1/2 mx-4">
         <img
-          className="object-cover"
+          className="object-cover md:pt-0 pt-56"
           src="https://foodfire-app.netlify.app/Contact-Us.13c5d28a.png"
           alt="Contact us"
         />

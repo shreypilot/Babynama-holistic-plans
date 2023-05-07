@@ -30,15 +30,15 @@ const Header = () => {
           </Link>
           </div>
           <button onClick={handleToggleTheme} className={`md:hidden mt-4 ${isMenuOpen ? "my-10 " : "my-0"
-          } md:mx-6 md:my-4  ml-5 ${theme === 'light' ? 'bg-gray-800  border-gray-500 w-12 h-12 border-4 rounded-xl px-3' : ' bg-white  border-gray-400 w-12 h-12 border-4 rounded-xl px-3'} `}>
+          } md:mx-6 md:my-4 ml-5 ${theme === 'light' ? 'bg-gray-800  border-gray-500 w-12 h-12 border-4 rounded-xl px-3' : ' bg-white  border-gray-400 w-12 h-12 border-4 rounded-xl px-3'} `}>
                               {theme === 'light' ? <RiMoonLine /> : <BiSun />}
           </button>
           <button
-            className="md:hidden "
+            className="md:hidden px-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <svg
-              className={`${theme === 'light' ? 'text-white' : 'text-gray-800'} w-6 h-6 fill-current`}
+              className={`${theme === 'light' ? 'text-white' : 'text-gray-800'} w-12 h-12 mt-4 fill-current`}
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -62,22 +62,22 @@ const Header = () => {
           className={`${isMenuOpen ? "block" : "hidden"
             } md:flex md:items-center md:justify-evenly w-full mt-4 md:mt-0   text-gray-700 capitalize text-xl font-bold`}
         >
-           <li className='md:py-0 py-10 md:shadow-none shadow-lg pl-2'>
+           <li className='md:py-0 py-10 md:shadow-none shadow-lg pl-2' onClick={() => setIsMenuOpen(!isMenuOpen)} >
                 <Link to="/service" className = {`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Our Services
                 </Link>
                 </li>
-                <li className='md:py-0 py-10  md:shadow-none shadow-lg pl-2'>
+                <li className='md:py-0 py-10  md:shadow-none shadow-lg pl-2' onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <Link to="/testimonal" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Parent Testimonials
                 </Link>
                 </li>
-                <li className='md:py-0 py-10  md:shadow-none shadow-lg pl-2'>
+                <li className='md:py-0 py-10  md:shadow-none shadow-lg pl-2' onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <Link to ="/team" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Our Team
                 </Link>
                 </li>
-                <li className='md:py-0 py-10  md:shadow-none shadow-lg pl-2'>
+                <li className='md:py-0 py-10  md:shadow-none shadow-lg pl-2' onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <Link to="/contact" className={`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Contact Us
                 </Link>
