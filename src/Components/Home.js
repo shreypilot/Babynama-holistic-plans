@@ -1,17 +1,20 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+  const theme = useSelector((state) => state.theme);
+
   return (
-    <section className='bg-gray-50 py-48 h-screen '>
-        <div className='mx-auto max-w-6xl md:px-4 sm:px-6'>
-          <div className='grid lg:grid-cols-2 md:grid-rows-2 items-center  gap-8 py-16  md:py-20'>
+    <section className={` bg-gray-50 py-48  w-auto shadow-md  ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'}`}>
+        <div className='mx-auto max-w-6xl md:px-6 sm:px-6'>
+          <div className='grid lg:grid-cols-2 md:grid-rows-2 items-center  gap-8 py-24  md:py-20'>
             <div className='mx-auto max-w-4xl pb-10  gap-8 lg:py-16 md:grid-cols-2 md:py-20'>
-                <h1 className=' font-bold leading-tight mb-6 text-4xl'>
+                <h1 className={` font-bold leading-tight mb-6 text-4xl   ${theme === 'light' ? ' text-gray-50' : 'text-black'}`}>
                     Holistic Plans
                 </h1>
                 <div className='mx-auto max-w-3xl'>
-                  <p className='mb-8 font-medium text-gray-600 sm:text-xl md:text-2xl'>Dedicated pediatrician for your baby, personal care plan, Best possible baby care</p>
+                  <p className={ `mb-8 font-medium text-gray-600 sm:text-xl md:text-2xl  ${theme === 'light' ? ' text-gray-300' : 'text-black'}`}>Dedicated pediatrician for your baby, personal care plan, Best possible baby care</p>
                    <div className='flex max-w-none gap-4 pt-20'>
                     <button className='flex w-full sm:w-auto'>
                         <a className='w-full text-base font-medium sm:text-lg md:text-xl bg-blue-600 hover:bg-green-950 py-4 px-6 rounded-md text-white '>Get Started</a>

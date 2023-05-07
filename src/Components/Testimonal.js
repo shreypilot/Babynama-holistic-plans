@@ -1,7 +1,12 @@
 import React from 'react';
 import {AiFillPlayCircle} from 'react-icons/ai';
+import ReactPlayer from 'react-player';
+import { useSelector } from 'react-redux';
+
 
 const Testimonial = () => {
+  const theme = useSelector((state) => state.theme);
+
   const testimonials = [
     {
       id: 1,
@@ -59,29 +64,30 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
-      <h1 className='font-bold text-4xl text-center  mb-12'>Parent Testimonal</h1>
+    <div className={`${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'}`}>
+      <div className="max-w-screen-xl mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8">
+      <h1 className={`font-bold text-4xl text-center  mb-12 ${theme === 'light' ? 'text-gray-50' : 'text-gray-800'}`}>Parent Testimonal</h1>
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 mt-4">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="mt-8 lg:mt-0 box-border shadow-lg shadow-gray-500 p-4">
+            <div key={testimonial.id} className="mt-8 lg:mt-0 box-border shadow-lg rounded-lg shadow-gray-500 p-4">
               <div className="flex">
                 <div className="flex-shrink-0">
                   <img className="h-12 w-12 rounded-full" src={testimonial.image} alt={testimonial.name} />
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">{testimonial.name}</h3>
+                  <h3 className={`text-lg font-medium  ${theme === 'light' ? 'text-gray-50' : 'text-gray-800'}`}>{testimonial.name}</h3>
                 </div>
               </div>
               <div className="mt-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="col-span-1">
-                    <img className="h-48 w-full object-cover rounded-lg shadow-md" src={testimonial.image} alt={testimonial.name} />
+                    <ReactPlayer url={testimonial.videoUrl} width='100%' height='100%' className="h-48  object-cover rounded-lg shadow-md" />
+                    {/* <img className="h-48 w-full object-cover rounded-lg shadow-md" src={testimonial.image} alt={testimonial.name} /> */}
                   </div>
                   <div className="col-span-1">
-                    <p className="mt-2 text-gray-600">{testimonial.testimonial}</p>
-                    <div className="relative w-full h-full">
-                      <div className="absolute inset-0 flex justify-start mt-2">
+                    <p className={`mt-2 text-gray-600  ${theme === 'light' ? 'text-gray-200' : 'text-gray-800'} `}>{testimonial.testimonial}</p>
+                    <div className=" w-full h-full">
+                      <div className=" flex justify-start mt-2">
                         <button className="bg-red-500 hover:bg-red-600 rounded-l-full rounded-r-full h-12 w-28 flex items-center justify-center" onClick={() => handleVideoClick(testimonial.videoUrl)}>
                           <p className=' text-white font-bold text-lg'>Play</p>
                           <AiFillPlayCircle className='bg-red-500 text-white text-2xl ml-2 font-bold'/>

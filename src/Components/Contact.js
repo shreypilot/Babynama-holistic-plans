@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {AiTwotonePhone} from 'react-icons/ai';
 import {FiMail} from 'react-icons/fi';
+import { useSelector } from 'react-redux';
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
@@ -9,26 +10,27 @@ const Contact = () => {
         setMessage(true);
     }
       
+const theme = useSelector((state) => state.theme);
 
     
   return (
-    <div className="flex flex-wrap  mx-auto mb-7 justify-evenly overflow-y-hidden items-center  bg-gray-50 w-screen h-screen">
+    <div className={`flex flex-wrap py-24  mx-auto mb-7 justify-evenly overflow-y-hidden items-center  ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'} w-full h-screen`}>
       <div className="contact-left">
       <img src="https://foodfire-app.netlify.app/Contact-Us.13c5d28a.png" alt="contact" />
       </div>
       <div className="flex flex-col items-center justify-center text-xl">
-      <h1 className=" font-bold text-gray-950 text-4xl mb-2">Contact us</h1>
-                <form onSubmit={handleSubmit} className="flex flex-col p-3 justify-center items-center">
+      <h1 className={`font-bold text-gray-950 text-4xl mb-2  ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}`}>Contact us</h1>
+                <form onSubmit={handleSubmit} className="flex flex-col  p-3 justify-center items-center">
                 <input type="text" placeholder="Name" required className=" p-3 m-3 rounded-md box-border shadow w-96 border-2 border-solid border-gray-300"/>
                     <input type="email" placeholder="Email" required className="p-3 m-3 rounded-md box-border shadow-md w-96 border-2 border-solid border-gray-300"/>
                     <textarea placeholder="Type your Message here..." required className="p-3 m-3 rounded-md box-border shadow-md w-96 border-2 border-solid border-gray-300"></textarea>
-                    <button type="submit" className="py-3 px-4 m-3 bg-blue-500  shadow border-none rounded-md box-border cursor-pointer hover:bg-green-950 ">Submit</button>
+                    <button type="submit" className={`py-3 px-4 m-3 bg-blue-500  ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}   shadow border-none rounded-md box-border cursor-pointer hover:bg-green-950`}>Submit</button>
                     {message && <span>Thanks for contacting Babynama, We will reply ASAP.</span>}
                 </form>
       <div className="flex gap-10 text-sm font-light">
         <div className="flex">
           <AiTwotonePhone
-            className="font-bold text-xl  cursor-pointer"
+            className={`font-bold text-xl  cursor-pointer  ${theme === 'light' ? 'text-blue-300' : 'text-gray-950'}`}
             onClick={() => window.location.href = 'tel:+917303786959'}
 
           />

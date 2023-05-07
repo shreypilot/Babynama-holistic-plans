@@ -19,9 +19,9 @@ function Header() {
    
     
   return (
-    <div className="fixed top-0 left-0 right-0">
+    <div className="fixed top-0 left-0  md:shadow-lg md:h-20 right-0">
       <header className={`bg-gray-100 py-4 w-auto shadow-md  ${theme === 'light' ? 'bg-gray-800' : 'bg-gray-100'}`}>
-        <div className="container mx-auto  flex justify-between">
+        <div className="container mx-auto flex justify-between">
           <Link to='/'>
             <img src="https://babynama.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-new.13630e49.webp&w=1920&q=75" alt="babynama" className='md:w-52 lg:w-auto  sm:w-36' />
           </Link>
@@ -53,7 +53,7 @@ function Header() {
                   )}
                 </svg>
               </button>
-              <ul className={`flex space-x-4 gap-x-5 items-center  font-medium text-lg cursor-pointer ${isMenuOpen ? 'block' : 'hidden'} `}>
+              <ul className={`flex space-x-4 md:flex md:items-center md:justify-evenly w-full mt-4 md:mt-0 text-gray-700 capitalize   gap-x-5 items-center  font-medium text-lg cursor-pointer ${isMenuOpen ? 'block' : 'hidden'} `}>
                 <li>
                 <Link to="/service" className = {`${theme === 'light' ? 'text-white' : 'text-gray-800'}`}>
                     Our Services

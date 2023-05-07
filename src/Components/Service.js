@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+
 
 const servicesData = [
   {
@@ -58,17 +60,19 @@ const Services = () => {
   const toggleAccordion = (index) => {
     setActiveAccordion(activeAccordion === index ? null : index);
   };
+  const theme = useSelector((state) => state.theme);
+
 
   return (
-    <div className='bg-gray-50 w-screen h-screen'>
-    <div className="max-w-screen-xl mx-auto py-16 px-4 sm:px-6 lg:py-24 lg:px-8 ">
-      <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
+    <div className={`${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'}`}>
+    <div className="max-w-screen-xl mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8 ">
+      <h1 className={`text-4xl font-bold text-center mb-12 ${theme === 'light' ? 'text-gray-100' : 'text-gray-800'}`}>Our Services</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {servicesData.map((service, index) => (
-          <div key={service.id} className="bg-white rounded-lg shadow-md p-6">
+          <div key={service.id} className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-white'} rounded-lg shadow-md p-6 shadow-gray-500`}>
           <img src={service.image} alt={service.title} className="mb-4" />
-            <h2 className="text-lg font-medium text-gray-900 mb-4">{service.title}</h2>
-            <p className={`text-gray-600 ${activeAccordion === index ? 'max-h-full' : 'max-h-16 overflow-hidden'}`}>
+            <h2 className={`text-lg font-medium  mb-4  ${theme === 'light' ? 'text-gray-50' : 'text-gray-900'}`}>{service.title}</h2>
+            <p className={` ${theme === 'light' ? 'text-gray-50' : 'text-gray-600'} ${activeAccordion === index ? 'max-h-full' : 'max-h-16 overflow-hidden'}`}>
               {service.content}
             </p>
             <button
