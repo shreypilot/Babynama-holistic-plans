@@ -14,7 +14,7 @@ const Home = () => {
                     Holistic Plans
                 </h1>
                 <div className='mx-auto max-w-3xl'>
-                  <p className={ `mb-8 font-medium text-gray-600 sm:text-xl md:text-2xl  ${theme === 'light' ? ' text-gray-300' : 'text-black'}`}>Dedicated pediatrician for your baby, personal care plan, Best possible baby care</p>
+                  <p className={ `mb-8 font-medium  sm:text-xl md:text-2xl  ${theme === 'light' ? ' text-gray-100' : 'text-black'}`}>Dedicated pediatrician for your baby, personal care plan, Best possible baby care</p>
                    <div className='flex max-w-none gap-4 pt-20'>
                     <button className='flex w-full sm:w-auto'>
                         <a className='w-full text-base font-medium sm:text-lg md:text-xl bg-blue-600 hover:bg-green-950 py-4 px-6 rounded-md text-white '>Get Started</a>

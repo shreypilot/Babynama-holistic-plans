@@ -85,7 +85,7 @@ const Testimonial = () => {
                     {/* <img className="h-48 w-full object-cover rounded-lg shadow-md" src={testimonial.image} alt={testimonial.name} /> */}
                   </div>
                   <div className="col-span-1">
-                    <p className={`mt-2 text-gray-600  ${theme === 'light' ? 'text-gray-200' : 'text-gray-800'} `}>{testimonial.testimonial}</p>
+                    <p className={`mt-2 ${theme === 'light' ? 'text-gray-200' : 'text-gray-800'} `}>{testimonial.testimonial}</p>
                     <div className=" w-full h-full">
                       <div className=" flex justify-start mt-2">
                         <button className="bg-red-500 hover:bg-red-600 rounded-l-full rounded-r-full h-12 w-28 flex items-center justify-center" onClick={() => handleVideoClick(testimonial.videoUrl)}>

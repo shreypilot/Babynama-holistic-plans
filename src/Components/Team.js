@@ -57,7 +57,7 @@ const Team = () => {
             <div className="px-4 py-12">
               <h3 className={` ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'} text-lg font-bold mb-1`}>{member.name}</h3>
               <p className={` mb-1 ${theme === 'light' ? 'text-gray-100' : 'text-gray-900'}`}>{member.degree}</p>
-              <p className={`text-gray-600 text-sm ${theme === 'light' ? 'text-gray-100' : 'text-gray-800'}`}>{member.experience} years of experience</p>
+              <p className={`text-sm ${theme === 'light' ? 'text-gray-100' : 'text-gray-800'}`}>{member.experience} years of experience</p>
             </div>
           </div>
            
