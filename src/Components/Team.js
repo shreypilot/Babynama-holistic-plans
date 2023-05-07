@@ -32,10 +32,11 @@ const Team = () => {
   };
 
   return (
-<div className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'} flex flex-col h-screen `} >
-<div className="mx-auto py-24 px-4 sm:px-12 lg:py-28 lg:px-8">
+
+<div className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'}  `}>
+<div className="max-w-screen-xl mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8">
       <h1 className={`text-4xl font-bold text-center mb-24 ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}  `}>Our Team</h1>
-    <div className="absolute inset-0 h-96 mt-52 flex items-center justify-center">
+    <div className=" mt-4 flex items-center justify-center">
       <div className="">
         <button
           onClick={handlePrevClick}
@@ -75,6 +76,7 @@ const Team = () => {
       </div>
     </div>
 </div>
+
   );
 };
 export default Team;
