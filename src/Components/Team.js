@@ -35,8 +35,8 @@ const Team = () => {
 
 <div className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'}  `}>
 <div className="max-w-screen-xl mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8">
-      <h1 className={`text-4xl font-bold text-center mb-24 ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}  `}>Our Team</h1>
-    <div className=" mt-4 flex items-center justify-center">
+      <h1 className={`text-4xl font-bold text-center  ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}  `}>Our Team</h1>
+    <div className="flex items-center justify-center">
       <div className="">
         <button
           onClick={handlePrevClick}
@@ -45,15 +45,15 @@ const Team = () => {
           <AiOutlineLeft className="w-6 h-6" />
         </button>
       </div>
-      <div className="flex justify-start  shadow-gray-600 pt-32 px-1 items-center  rounded-lg bottom-0 overflow-hidden w-96"  ref={productContainer}>
+      <div className="flex justify-start  shadow-gray-600 pt-32 px-1 items-center  rounded-lg bottom-0 overflow-hidden w-96 "  ref={productContainer}>
         {teamMembers.map((member, index) => (
           <div
             key={index}
             className=" py-2 h-full rounded-lg"
           >
-          <div className="shadow-lg rounded-lg 2 w-96  ">
+          <div className="shadow-lg rounded-lg 2 md:w-96 sm:w-56  ">
              <div className=" pb-2/3">
-              <img className=" h-96 w-96 items-center rounded-lg border-2 relative border-blue-300 " src={member.imageSrc} alt={member.name} />
+              <img className=" md:h-96 md:w-96 sm:w-56 sm:h-56 items-center rounded-lg border-2  border-blue-300 " src={member.imageSrc} alt={member.name} />
             </div>
             <div className="px-4 py-12">
               <h3 className={` ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'} text-lg font-bold mb-1`}>{member.name}</h3>
