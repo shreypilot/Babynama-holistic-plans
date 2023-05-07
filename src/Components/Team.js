@@ -45,26 +45,23 @@ const Team = () => {
           <AiOutlineLeft className="w-6 h-6" />
         </button>
       </div>
-      <div className="flex justify-start  shadow-gray-600 pt-32 px-1 items-center  rounded-lg bottom-0 overflow-hidden w-96 "  ref={productContainer}>
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className=" py-2 h-full rounded-lg"
-          >
-          <div className="shadow-lg rounded-lg 2 md:w-96  sm:w-72  ">
-             <div className=" pb-2/3">
-              <img className=" md:h-96 md:w-96 sm:w-72 sm:h-56 items-center rounded-lg border-2  border-blue-300 " src={member.imageSrc} alt={member.name} />
-            </div>
-            <div className="px-4 py-12">
-              <h3 className={` ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'} text-lg font-bold mb-1`}>{member.name}</h3>
-              <p className={` mb-1 ${theme === 'light' ? 'text-gray-100' : 'text-gray-900'}`}>{member.degree}</p>
-              <p className={`text-sm ${theme === 'light' ? 'text-gray-100' : 'text-gray-800'}`}>{member.experience} years of experience</p>
-            </div>
+      <div className="flex justify-start shadow-gray-600 pt-32 px-1 items-center rounded-lg bottom-0 overflow-hidden md:w-96" ref={productContainer}>
+    {teamMembers.map((member, index) => (
+      <div key={index} className="py-2 h-full rounded-lg">
+        <div className="shadow-lg rounded-lg max-w-screen-2xl md:w-96 h-96 md:h-full">
+          <div className="pb-2/3">
+            <img className="h-64 md:h-96 w-full md:w-96 object-cover rounded-lg border-2 border-blue-300" src={member.imageSrc} alt={member.name} />
           </div>
-           
+          <div className="px-4 py-12">
+            <h3 className={` ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'} text-lg font-bold mb-1`}>{member.name}</h3>
+            <p className={` mb-1 ${theme === 'light' ? 'text-gray-100' : 'text-gray-900'}`}>{member.degree}</p>
+            <p className={`text-sm ${theme === 'light' ? 'text-gray-100' : 'text-gray-800'}`}>{member.experience} years of experience</p>
           </div>
-        ))}
+        </div>
       </div>
+    ))}
+</div>
+
       <div className=" flex items-center justify-between">
         <button
           onClick={handleNextClick}

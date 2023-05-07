@@ -1,33 +1,82 @@
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { useState } from "react";
 import {AiTwotonePhone} from 'react-icons/ai';
 import {FiMail} from 'react-icons/fi';
-import { useSelector } from 'react-redux';
 
-const Contact = () => {
+function ContactForm() {
+  const theme = useSelector((state) => state.theme);
   const [message, setMessage] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setMessage(true);
+        setInputValue('');
     }
-      
-const theme = useSelector((state) => state.theme);
-
-    
   return (
-    <div className={`flex flex-wrap py-24  mx-auto mb-7 justify-evenly overflow-y-hidden items-center  ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'} w-full h-screen`}>
-      <div className="contact-left">
-      <img src="https://foodfire-app.netlify.app/Contact-Us.13c5d28a.png" alt="contact" />
+    <div className={` ${theme === 'light' ? 'bg-gray-700' : 'bg-gray-50'} flex flex-col h-screen md:flex-row items-center justify-center mt-10  mx-auto py-24 px-4 sm:px-6 lg:py-24 lg:px-8`}>
+    <div className="md:w-1/2 mx-4">
+        <img
+          className="object-cover"
+          src="https://foodfire-app.netlify.app/Contact-Us.13c5d28a.png"
+          alt="Contact us"
+        />
       </div>
-      <div className="flex flex-col items-center justify-center text-xl">
-      <h1 className={`font-bold text-gray-950 text-4xl mb-2  ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}`}>Contact us</h1>
-                <form onSubmit={handleSubmit} className="flex flex-col  p-3 justify-center items-center">
-                <input type="text" placeholder="Name" required className=" p-3 m-3 rounded-md box-border shadow w-96 border-2 border-solid border-gray-300"/>
-                    <input type="email" placeholder="Email" required className="p-3 m-3 rounded-md box-border shadow-md w-96 border-2 border-solid border-gray-300"/>
-                    <textarea placeholder="Type your Message here..." required className="p-3 m-3 rounded-md box-border shadow-md w-96 border-2 border-solid border-gray-300"></textarea>
-                    <button type="submit" className={`py-3 px-4 m-3 bg-blue-500  ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'}   shadow border-none rounded-md box-border cursor-pointer hover:bg-green-950`}>Submit</button>
-                    {message && <span>Thanks for contacting Babynama, We will reply ASAP.</span>}
-                </form>
-      <div className="flex gap-10 text-sm font-light">
+      <div className="md:w-1/2 mx-4">
+        <form onSubmit={handleSubmit} className={`shadow-md rounded px-8 pt-6 pb-8 mb-4  ${theme === 'light' ? 'bg-gray-800' : 'bg-white'} `} >
+          <h2 className={`mb-4 text-2xl font-bold text-center  ${theme === 'light' ? 'text-white' : 'text-gray-950'}`}>Contact Us</h2>
+          <div className="mb-4  ">
+            <label className={`block  ${theme === 'light' ? 'text-white' : 'text-gray-700'} font-bold mb-2 `} htmlFor="name">
+              Name
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="name"
+              type="text"
+              required
+              placeholder="Enter your name"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className={`block  font-bold  ${theme === 'light' ? 'text-white' : 'text-gray-700'} mb-2" `} htmlFor="email">
+              Email
+            </label>
+            <input
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="email"
+              type="email"
+              required
+              placeholder="Enter your email"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <label className={`block  ${theme === 'light' ? 'text-white' : 'text-gray-700'} font-bold mb-2`} htmlFor="message">
+              Message
+            </label>
+            <textarea
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="message"
+              rows="5"
+              placeholder="Enter your message"
+              value={inputValue}
+              onChange={(e) => setInputValue(e.target.value)}
+            />
+          </div>
+          <div className="flex flex-col  items-center justify-center">
+            <button
+              className="bg-blue-500 hover:bg-green-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Send Message
+            </button>
+            {message && <span className={` ${theme === 'light' ? 'text-white' : 'text-gray-700'} pt-4`}>Thanks for contacting Babynama, We will reply ASAP.</span>}
+          </div>
+          <div className="flex gap-10 text-sm font-light">
         <div className="flex">
           <AiTwotonePhone
             className={`font-bold text-xl  cursor-pointer  ${theme === 'light' ? 'text-blue-300' : 'text-gray-950'}`}
@@ -49,9 +98,12 @@ const theme = useSelector((state) => state.theme);
           </p>
         </div>
       </div>
-    </div>
+        </form>
+      </div>
+      
     </div>
   );
-    };
+}
 
-export default Contact;
+export default ContactForm;
+
