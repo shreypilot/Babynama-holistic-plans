@@ -51,9 +51,9 @@ const Team = () => {
             key={index}
             className=" py-2 h-full rounded-lg"
           >
-          <div className="shadow-lg rounded-lg 2 md:w-96 sm:w-56  ">
+          <div className="shadow-lg rounded-lg 2 md:w-96  sm:w-72  ">
              <div className=" pb-2/3">
-              <img className=" md:h-96 md:w-96 sm:w-56 sm:h-56 items-center rounded-lg border-2  border-blue-300 " src={member.imageSrc} alt={member.name} />
+              <img className=" md:h-96 md:w-96 sm:w-72 sm:h-56 items-center rounded-lg border-2  border-blue-300 " src={member.imageSrc} alt={member.name} />
             </div>
             <div className="px-4 py-12">
               <h3 className={` ${theme === 'light' ? 'text-gray-50' : 'text-gray-950'} text-lg font-bold mb-1`}>{member.name}</h3>
